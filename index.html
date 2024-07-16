@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Form Page</h1>
+    <div class="container">
+        <form id="form" method="post">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">Name</label>
+                <input type="text" class="form-control" id="nameInput">
+                <span class="name-msg err-msg" id="nameMsg"></span>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone number</label><br>
+                <input type="tel" class="phone-tel form-control" id="phone"><br>
+                <span id="errorMsg" class="err-msg hide"></span>
+            </div>
+            <div class="mb3">
+                <label for="emailInput" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailInput">
+                <span class="email-msg err-msg" id="emailMsg"></span>
+            </div>
+            <div class="mb-3">
+                <label for="pwdInput" class="form-label">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="pwdInput">
+                    <span class="input-group-text show-password eye" onclick="togglePassword('pwdInput', this)">👁️</span>
+                </div>
+                <span class="pwd-msg err-msg" id="pwdMsg"></span>
+                <div class="power-container">
+                    <div id="powerPoint"></div>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <label for="confirmInput" class="form-label">Confirm Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="confirmInput">
+                    <span class="input-group-text show-password eye" onclick="togglePassword('confirmInput', this)">👁️</span>
+                </div>
+                <span class="confirm-msg err-msg" id="confirmMsg"></span>
+            </div>
+            <div class="mb-3">
+                <label for="dateInput" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="dateInput" max="2024-07-02">
+                <span class="date-msg err-msg"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <br>
+                <input type="radio" id="maleRadio" name="gender" value="Male">
+                <label for="maleRadio">Male</label>
+                <input type="radio" id="femaleRadio" name="gender" value="Female">
+                <label for="femaleRadio">Female</label>
+                <input type="radio" id="otherRadio" name="gender" value="Other">
+                <label for="otherRadio">Other</label><br>
+                <span class="gender-msg err-msg"></span>
+            </div>
+            <div class="mb-3">
+                <select id="stateInput" class="form-control">
+                    <option value="default">Select state</option>
+                </select>
+                <span class="state-msg err-msg"></span>
+            </div>
+            <div class="mb-3">
+                <select id="cityInput" class="form-control">
+                    <option value="default">Select city</option>
+                </select>
+                <span class="city-msg err-msg"></span>
+            </div>
+            <div class="mb-3">
+                <label for="zipInput" class="form-label">Zip code</label>
+                <input type="number" class="form-control" id="zipInput">
+                <span class="zip-msg err-msg"></span>
+            </div>
+            <div class="mb3">
+                <label class="form-input">Language support</label>
+                <div class="checkbox">
+                    <input type="checkbox" id="check1" value="Marathi">
+                    <label for="check1">Marathi</label>
+
+                    <input type="checkbox" id="check2" value="Hindi">
+                    <label for="check2">Hindi</label>
+
+                    <input type="checkbox" id="check3" value="English">
+                    <label for="check3">English</label>
+
+                    <input type="checkbox" id="check4" value="Gujrati">
+                    <label for="check4">Gujrati</label>
+
+                    <input type="checkbox" id="check5" value="Bengali">
+                    <label for="check5">Bengali</label>
+
+                    <input type="checkbox" id="check6" value="Assamese">
+                    <label for="check6">Assamese</label>
+
+                    <input type="checkbox" id="check7" value="Tamil">
+                    <label for="check7">Tamil</label>
+
+                    <input type="checkbox" id="check8" value="Oriya">
+                    <label for="check8">Oriya</label>
+
+                    <input type="checkbox" id="check9" value="Telegu">
+                    <label for="check9">Telugu</label>
+
+                    <input type="checkbox" id="check10" value="Rajasthani">
+                    <label for="check10">Rajasthani</label>
+
+                    <input type="checkbox" id="check11" value="Punjabi">
+                    <label for="check11">Punjabi</label>
+                </div>
+                <span class="lang-msg err-msg"></span>
+            </div>
+            <div class="buttons">
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                <input type="reset" value="Reset" id="reset" class="btn btn-danger">
+            </div>
+        </form>
+
+    </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h1>Do you want to submit your details</h1>
+            <div class="data"></div>
+            <div class="btns">
+                <button class="submit-modal btn btn-primary">Submit</button>
+                <button class="cancel-modal btn btn-danger">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+        integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="intl-tel-input-23.1.0/build/css/intlTelInput.css"></script>
+    <script src="intl-tel-input-23.1.0/build/js/utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 70px;
+  width: 60%;
+  border: 2px solid rgb(212, 211, 211);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#selectedLangs{
+  text-wrap: wrap;
+}

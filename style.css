@@ -1,0 +1,97 @@
+/*Style index
+====================================================================================
+
+    -1 Helper Styles (quick and easy way to apply certain properties
+
+    -2 UI Elements (Redefine UI elements under this section
+
+*/
+
+
+
+/* Helper styles */
+/*=================================================================================*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* UI Elements*/
+/*==================================================================================*/
+body{
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.container{
+    margin: 70px;
+    width: 40%;
+    border: 2px solid rgb(212, 211, 211);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.err-msg {
+  color: rgb(255, 0, 0);
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show-password {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.power-container {
+  background-color: #2E424D;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+}
+
+.power-container #powerPoint {
+  /* background-color: #D73F40; */
+  width: 1%;
+  height: 100%;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.eye.slash::after {
+  content: '/';
+  position: absolute;
+  font-size: 65px;
+  color: rgb(87, 86, 86);
+  transform: rotate(45deg);
+}
